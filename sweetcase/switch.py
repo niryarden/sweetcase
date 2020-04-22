@@ -15,7 +15,7 @@ def switch(expression, cases):
                 should_execute_default = False
 
         if get_default_check_condition(case):
-            default_value = case.statement
+            default_value = case.exec
 
     if should_execute_default and default_value:
         return default_value()

@@ -82,7 +82,7 @@ print(f"{arguments[0]} + {arguments[1]} = {res}")
 <br/>
 
 ## Documentation
-**sweetcase.switch(expression, cases)**
+**sweetcase**.<span style="color:red;font-size:20px;font-weight:500">switch</span>(expression, cases)
 
 The switch function evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case.
 
@@ -92,7 +92,7 @@ Parameters:
 
 <br/><br/>
 
-**sweetcase.case(value, statement)**
+**sweetcase**.<span style="color:red;font-size:20px;font-weight:500">case</span>(value, statement)
 
 The case functions returns a Case object, that can be used for the cases array received by the switch function.
 

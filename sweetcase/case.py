@@ -1,11 +1,12 @@
 class Case:
-    def __init__(self, value, func):
+    def __init__(self, value, statement, arguments):
         self.value = value
-        self.func = func
+        self.statement = statement
+        self.arguments = arguments
 
     def exec(self):
-        return self.func()
+        return self.statement(*self.arguments)
 
 
-def case(value, func):
-    return Case(value, func)
+def case(value, statement, arguments=[]):
+    return Case(value, statement, arguments)

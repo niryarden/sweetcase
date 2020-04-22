@@ -1,31 +1,27 @@
-# example use of the sweetcase module
-# the following code is equivalent to:
-
-# switch(argument) {
-#     case 1:
-#         return "one";
-#     case 2:
-#         return "two";
-#     case 3:
-#         return "three";
-#     default:
-#         return "zero";
-# };
-
 from sweetcase import switch, case, default
 
 
 def main():
-    num = int(input(">> "))
+    def addition(num1, num2):
+        result = num1 + num2
+        print(result)
+        return result
 
-    res = switch(num, [
-        case(1, lambda: 'one'),
-        case(2, lambda: 'two'),
-        case(3, lambda: 'three'),
-        case(default, lambda: 'zero')
+    def subtraction(num1, num2):
+        result = num1 - num2
+        print(result)
+        return result
+
+    arguments = [5, 3]
+    action = input(">> ")
+
+    res = switch(action, [
+        case("+", addition, arguments),
+        case("-", subtraction, arguments),
+        case(default, lambda: 'error', arguments)
     ])
 
-    print(res)
+    print(f"{arguments[0]} + {arguments[1]} = {res}")
 
 
 if __name__ == "__main__":

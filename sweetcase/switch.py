@@ -1,11 +1,11 @@
 from .default import default
 
 
-def switch(condition, cases):
+def switch(expression, cases):
     default_value = False
     for case in cases:
-        if condition == case.value:
+        if expression == case.value:
             return case.exec()
         if case.value == default:
-            default_value = case.func
+            default_value = case.statement
     return default_value()

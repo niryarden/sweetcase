@@ -1,6 +1,7 @@
 # sweetcase
 Light-weight module allowing the use a [switch-case](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) alike syntax for python.
 
+<br/>
 ### Install and Import
 ```bash
 pip install sweetcase
@@ -9,6 +10,7 @@ pip install sweetcase
 ```python
 from sweetcase import switch, case, default
 ```
+<br/>
 
 ### Usage Examples
 (1) use:
@@ -41,6 +43,7 @@ switch(num) {
         return "zero";
 };
 ```
+<br/>
 
 (2) multiline function and arguments example:
 ```python
@@ -65,6 +68,7 @@ res = switch(action, [
 
 print(f"{arguments[0]} + {arguments[1]} = {res}")
 ```
+<br/>
 
 ### Documentation
 **sweetcase.switch(expression, cases)**
@@ -75,7 +79,7 @@ Parameters:
 * expression - Expression for the switch evaluation.
 * cases - List of objects of the type Case, which is returned from the case() function.
 
-
+<br/><br/>
 
 **sweetcase.case(value, statement)**
 

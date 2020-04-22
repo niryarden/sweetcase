@@ -2,26 +2,12 @@ from sweetcase import switch, case, default
 
 
 def main():
-    def addition(num1, num2):
-        result = num1 + num2
-        print(result)
-        return result
-
-    def subtraction(num1, num2):
-        result = num1 - num2
-        print(result)
-        return result
-
-    arguments = [5, 3]
-    action = input(">> ")
-
-    res = switch(action, [
-        case("+", addition, arguments),
-        case("-", subtraction, arguments),
-        case(default, lambda: 'error', arguments)
+    expression = 4
+    switch(expression, [
+        case(4, lambda: print('4'), to_break=False),
+        case(3 + 1, lambda: print('3 + 1'), to_break=False),
+        case(default, lambda: print('error'))
     ])
-
-    print(f"{arguments[0]} + {arguments[1]} = {res}")
 
 
 if __name__ == "__main__":

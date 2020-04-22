@@ -1,1 +1,1 @@
-default = "default"
+default = "DEFAULT_VALUE_UNIQUE_PLACE_HOLDER"

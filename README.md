@@ -24,7 +24,7 @@ from sweetcase import switch, case, default
 <br/>
 
 ## Usage Examples
-(1) use:
+(1) basic use:
 ```python
 from sweetcase import switch, case, default
 
@@ -37,7 +37,7 @@ res = switch(num, [
 ])
 ```
 
-to achieve the equivalent behavior of:
+is equivalent to the behavior of:
 ```js
 const num = 1;
 switch(num) {
@@ -56,7 +56,7 @@ switch(num) {
 ```
 <br/>
 
-(2) multiline function and arguments example:
+(2) multiline function with arguments:
 ```python
 def addition(num1, num2):
     result = num1 + num2
@@ -72,12 +72,23 @@ arguments = [5, 3]
 action = input(">> ")
 
 res = switch(action, [
-    case("+", addition, arguments),
-    case("-", subtraction, arguments),
-    case(default, lambda: 'error', arguments)
+    case("+", addition, arguments=arguments),
+    case("-", subtraction, arguments=arguments),
+    case(default, lambda: 'error')
 ])
 
 print(f"{arguments[0]} + {arguments[1]} = {res}")
+```
+<br/>
+
+(3) use of `to_break=False` (will print both '4' and '3 + 1'):
+```python
+expression = 4
+switch(expression, [
+    case(4, lambda: print('4'), to_break=False),
+    case(3 + 1, lambda: print('3 + 1'), to_break=False),
+    case(default, lambda: print('error'))
+])
 ```
 <br/>
 
@@ -100,3 +111,4 @@ Parameters:
 * value -  Value to be compared to the switch's expression.
 * statement - A function of a lambda to be operated if the value matches the switch's expression.
 * arguments - (Optional, default = []) A list of arguments to send the statement function.
+* to_break - (Optional, default = True) Boolean value which when true, breaks the switch after running the statement of a matching case. 

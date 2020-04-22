@@ -1,5 +1,5 @@
 # sweetcase
-Simple and light-weight module allowing the use a **[switch-case](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)** alike syntax in python.
+Simple and light-weight module allowing the use of a **[switch-case](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)** alike syntax in python.
 <br/><br/><br/>
 
 ## Install and Import

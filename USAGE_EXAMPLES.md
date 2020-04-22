@@ -6,10 +6,10 @@ from sweetcase import switch, case, default
 
 num = 1
 res = switch(num, [
-    case(1, lambda: 'one'),
-    case(2, lambda: 'two'),
-    case(3, lambda: 'three'),
-    case(default, lambda: 'zero')
+    case(1, lambda: "one"),
+    case(2, lambda: "two"),
+    case(3, lambda: "three"),
+    case(default, lambda: "zero")
 ])
 ```
 
@@ -18,20 +18,21 @@ equivalent JavaScript code:
 const myFunc = num => {
     switch(num) {
     case 1:
-        return "one";
+        return 'one';
         break;
     case 2:
-        return "two";
+        return 'two';
         break;
     case 3:
-        return "three";
+        return 'three';
         break;
     default:
-        return "zero";
+        return 'zero';
     };
 }
 res = myFunc(1)
 ```
+
 <br/><br/>
 
 ## Use of multiline function with arguments:
@@ -46,16 +47,14 @@ def subtraction(num1, num2):
     print(result)
     return result
 
-arguments = [5, 3]
-
+numbers = [5, 3]
 action = "+"
+
 res = switch(action, [
-    case("+", addition, arguments=arguments),
-    case("-", subtraction, arguments=arguments),
+    case("+", addition, arguments=numbers),
+    case("-", subtraction, arguments=numbers),
     case(default, lambda: 'error')
 ])
-
-print(f"{arguments[0]} + {arguments[1]} = {res}")
 ```
 
 equivalent JavaScript code:
@@ -86,9 +85,9 @@ the output will be both '4' and '3 + 1'
 ```python
 expression = 4
 switch(expression, [
-    case(4, lambda: print('4'), to_break=False),
-    case(3 + 1, lambda: print('3 + 1'), to_break=False),
-    case(default, lambda: print('no match'))
+    case(4, lambda: print("4"), to_break=False),
+    case(3 + 1, lambda: print("3 + 1"), to_break=False),
+    case(default, lambda: print("no match"))
 ])
 ```
 

@@ -14,7 +14,7 @@ Parameters:
 
 ### case
 
-**sweetcase.case**(value, statement)
+**sweetcase.case**(value, statement, arguments=[], to_break=True, multi_case=False)
 
 The case functions returns a Case object, that can be used for the cases array received by the switch function.
 

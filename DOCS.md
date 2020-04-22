@@ -1,6 +1,6 @@
 # Documentation
 
-### switch
+## switch
 
 **sweetcase.switch**(expression, cases)
 
@@ -12,7 +12,7 @@ Parameters:
 
 <br/><br/>
 
-### case
+## case
 
 **sweetcase.case**(value, statement, arguments=[], to_break=True, multi_case=False)
 

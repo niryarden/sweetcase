@@ -6,10 +6,14 @@ from sweetcase import switch, case, default
 
 num = 1
 res = switch(num, [
-    case(1, lambda: "one"),
-    case(2, lambda: "two"),
-    case(3, lambda: "three"),
-    case(default, lambda: "zero")
+    case(1,
+         lambda: 'one'),
+    case(2,
+         lambda: 'two'),
+    case(3,
+         lambda: 'three'),
+    case(default,
+         lambda: 'zero')
 ])
 ```
 
@@ -51,9 +55,12 @@ numbers = [5, 3]
 action = "+"
 
 res = switch(action, [
-    case("+", addition, arguments=numbers),
-    case("-", subtraction, arguments=numbers),
-    case(default, lambda: 'error')
+    case("+",
+         addition, arguments=numbers),
+    case("-",
+         subtraction, arguments=numbers),
+    case(default,
+         lambda: 'error')
 ])
 ```
 
@@ -85,9 +92,14 @@ the output will be both '4' and '3 + 1'
 ```python
 expression = 4
 switch(expression, [
-    case(4, lambda: print("4"), to_break=False),
-    case(3 + 1, lambda: print("3 + 1"), to_break=False),
-    case(default, lambda: print("no match"))
+    case(4,
+         lambda: print("4"),
+         to_break=False),
+    case(3 + 1,
+         lambda: print("3 + 1"),
+         to_break=False),
+    case(default,
+         lambda: print("no match"))
 ])
 ```
 

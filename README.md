@@ -2,6 +2,7 @@
 Light-weight module allowing the use a [switch-case](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) alike syntax for python.
 
 <br/>
+
 ### Install and Import
 
 ```bash

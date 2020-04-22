@@ -3,6 +3,7 @@ Light-weight module allowing the use a [switch-case](https://developer.mozilla.o
 
 <br/>
 ### Install and Import
+
 ```bash
 pip install sweetcase
 ```

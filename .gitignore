@@ -131,3 +131,5 @@ dmypy.json
 # ide
 .idea
 idea/
+
+app.py

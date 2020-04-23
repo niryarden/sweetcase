@@ -159,6 +159,65 @@ switch (Animal) {
 
 <br/><br/>
 
+### goto
+output will be all 9 animals printed
+```python
+def human_options():
+    print("man")
+    print("woman")
+    print("child")
+
+def mammal_options():
+    print("lion")
+    print("whale")
+    print("giraffe")
+
+def animal_options():
+    print("bird")
+    print("fish")
+    print("ant")
+
+me = "animal"
+switch(me, [
+    case("human",
+         human_options),
+    case("mammal",
+         mammal_options,
+         goto="human"),
+    case("animal",
+         animal_options,
+         goto="mammal"),
+    case(default,
+         lambda: print("unknown"))
+])
+```
+
+equivalent c# code:
+```c#
+string me = "animal";
+switch (me)
+{
+    case "human":
+        Console.WriteLine("man");
+        Console.WriteLine("woman");
+        Console.WriteLine("child");
+        break;
+    case "mammal":
+        Console.WriteLine("lion");
+        Console.WriteLine("whale");
+        Console.WriteLine("giraffe");
+        goto "human";
+    case "animal":
+        Console.WriteLine("bird");
+        Console.WriteLine("fish");
+        Console.WriteLine("ant");
+        goto "mammal";
+}
+```
+
+
+<br/><br/>
+
 ## Default
 Default's location won't effect the output (in that case - 0)
 ```python

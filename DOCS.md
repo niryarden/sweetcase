@@ -14,7 +14,7 @@ Parameters:
 
 ## case
 
-**sweetcase.case**(value, statement, arguments=[], to_break=True, multi_case=False)
+**sweetcase.case**(value, statement, arguments=[], to_break=True, multi_case=False, goto=None)
 
 The case functions returns a Case object, that can be used in the cases array supplied to the switch function.
 
@@ -23,7 +23,8 @@ Parameters:
 * statement - A function or a lambda to be operated if the value matches the switch's expression.
 * arguments - (Optional, default = []) A list of arguments to send the statement function. (single argument should be supplied inside a list as well)
 * to_break - (Optional, default = True) Boolean value which when true, breaks the switch after running the statement of a matching case. please notice that this behavior is a different from classic switch-case syntax, in which the lack of break in the end of a statement results the interpreter to run the next case's statement, regardless of its value, while in sweetcase, to_break=False for a matching value means that the switch will keep looking for more matching cases.
-* multi_case - (Optional, default = False) Boolean value which when true, sweetcase will expect a list for the case value, and during evaluation each value in the list will be compared with the expression separately.  
+* multi_case - (Optional, default = False) Boolean value which when true, sweetcase will expect a list for the case value, and during evaluation each value in the list will be compared with the expression separately.
+* goto - (Optional, default = None) An object that will be equal to the value of another case supplied to the switch. When the statement is operated, after it finishes the switch will go to every case whose value matches it. Please notice that, naturally, adding a goto parameter to a case will automatically change its to_break parameter to false, in order to allow the switch to operate additional cases without breaking.
 
 <br/><br/><br/>
 

@@ -164,11 +164,16 @@ Default's location won't effect the output (in that case - 0)
 ```python
 foo = 4
 switch(foo, [
-    case(2, lambda: print(2)),
-    case(3, lambda: print(3)),
-    case(default, lambda: print(0)),
-    case(4, lambda: print(4)),
-    case(5, lambda: print(5))
+    case(2,
+         lambda: print(2)),
+    case(3,
+         lambda: print(3)),
+    case(default,
+         lambda: print(0)),
+    case(4,
+         lambda: print(4)),
+    case(5,
+         lambda: print(5))
 ])
 ```
 

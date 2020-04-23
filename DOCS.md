@@ -22,7 +22,7 @@ Parameters:
 * value -  Value to be compared to the switch's expression.
 * statement - A function or a lambda to be operated if the value matches the switch's expression.
 * arguments - (Optional, default = []) A list of arguments to send the statement function. (single argument should be supplied inside a list as well)
-* to_break - (Optional, default = True) Boolean value which when true, breaks the switch after running the statement of a matching case.
+* to_break - (Optional, default = True) Boolean value which when true, breaks the switch after running the statement of a matching case. please notice that this behavior is a different from classic switch-case syntax, in which the lack of break in the end of a statement results the interpreter to run the next case's statement, regardless of its value, while in sweetcase, to_break=False for a matching value means that the switch will keep looking for more matching cases.
 * multi_case - (Optional, default = False) Boolean value which when true, sweetcase will expect a list for the case value, and during evaluation each value in the list will be compared with the expression separately.  
 
 <br/><br/><br/>

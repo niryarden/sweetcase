@@ -87,8 +87,8 @@ res = myFunc(5, 3, '+')
 
 <br/><br/>
 
-## Use of break:
-the output will be both '4' and '3 + 1'
+## Use of to_break=False:
+the output will be both '4', '3 + 1' and '2 + 2'
 ```python
 expression = 4
 switch(expression, [
@@ -98,8 +98,8 @@ switch(expression, [
     case(3 + 1,
          lambda: print("3 + 1"),
          to_break=False),
-    case(default,
-         lambda: print("no match"))
+    case(2 + 2,
+         lambda: print("2 + 2"))
 ])
 ```
 
@@ -111,10 +111,12 @@ switch(expression) {
         console.log('4');
     case 3 + 1:
         console.log('3 + 1');
-    default:
-        console.log('no match');
+    case 2 + 2:
+        console.log('2 + 2');
 }
 ```
+
+The behavior of sweetcase's break is different from the classic switch-case behavior. Please see our [DOCS.md](https://github.com/niryarden/sweetcase/blob/master/DOCS.md) for further details. 
 
 <br/><br/>
 

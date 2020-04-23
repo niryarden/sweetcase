@@ -15,6 +15,9 @@ pip install sweetcase
 from sweetcase import switch, case, default
 ```
 
+#### prerequisites
+Just any version of python 3 - No need of any additional modules. 
+
 <br/>
 
 ## Usage Examples

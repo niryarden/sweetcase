@@ -179,7 +179,7 @@ class TestGoto(unittest.TestCase):
             result.append("fish")
             result.append("ant")
 
-        me = "mammal"
+        me = "animal"
         switch(me, [
             case("human",
                  human_options),

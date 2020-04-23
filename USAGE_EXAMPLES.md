@@ -7,13 +7,13 @@ from sweetcase import switch, case, default
 num = 1
 res = switch(num, [
     case(1,
-         lambda: 'one'),
+         lambda: "one"),
     case(2,
-         lambda: 'two'),
+         lambda: "two"),
     case(3,
-         lambda: 'three'),
+         lambda: "three"),
     case(default,
-         lambda: 'zero')
+         lambda: "zero")
 ])
 ```
 

@@ -44,6 +44,7 @@ def get_default_check_condition(case):
 def handle_goto(current_case, cases):
     current_case.exec()
     if current_case.goto:
-        goto_matches = [potential_case for potential_case in cases if potential_case.value == current_case.goto]
+        goto_matches = [
+            potential_case for potential_case in cases if get_comparison_condition(current_case.goto, potential_case)]
         for goto in goto_matches:
             handle_goto(goto, cases)

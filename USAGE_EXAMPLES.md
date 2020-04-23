@@ -159,7 +159,7 @@ switch (Animal) {
 
 <br/><br/>
 
-### goto
+## goto
 output will be all 9 animals printed
 ```python
 def human_options():

@@ -189,12 +189,53 @@ switch (foo) {
     break;
   default:
     console.log(0)
+    break;
   case 4:
     console.log(4);
     break;
   case 5:
     console.log(5);
-    break;
 }
 ```
 
+<br /><br />
+
+## Type as Expression
+Another useful example is using the type of a variable as the expression
+```python
+data = ["sweet", "case"]
+switch(type(data), [
+    case(int,
+         lambda: print(data)),
+    case([str, list],
+         lambda: print(len(data)), multi_case=True),
+    case(dict,
+         lambda: print(len(data.keys()))),
+    case(type(None),
+         lambda: print(None)),
+    case(default,
+         lambda: print(data))
+])
+```
+
+equivalent JavaScript code:
+```js
+const data = ['sweet', 'case'];
+switch (data.type) {
+  case 'int':
+    console.log(data);
+    break;
+  case 'string':
+  case 'array':
+    console.log(data.length);
+    break;
+  case 'object':
+    console.log(Object.keys(data).length);
+    break;
+  case 'null':
+    console.log(null);
+    break;
+  default:
+    console.log(data)
+}
+```

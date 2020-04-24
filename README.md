@@ -25,7 +25,22 @@ Basic Use:
 ```python
 from sweetcase import switch, case, default
 
-c
+operator = "*"
+n1 = 8
+n2 = 2
+
+res = switch(operator, [
+    case("+",
+         lambda: n1 + n2),
+    case("-",
+         lambda: n1 - n2),
+    case("*",
+         lambda: n1 * n2),
+    case("/",
+         lambda: n1 / n2),
+    case(default,
+         lambda: "unsupported operator"),
+])
 ```
 
 equivalent JavaScript code:

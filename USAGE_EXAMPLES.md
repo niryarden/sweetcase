@@ -295,6 +295,8 @@ switch(True, [
 ])
 ```
 
+<br /><br />
+
 ## Local Variable as Case Output 
 ```python
 result = None

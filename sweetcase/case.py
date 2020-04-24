@@ -1,4 +1,5 @@
-from .exceptions import EternalLoopError
+from .exceptions import EternalLoopError, ArgumentParameterError
+from .utils import length
 
 
 class Case:
@@ -17,6 +18,10 @@ class Case:
 def case(value, statement, arguments=None, to_break=True, multi_case=False, goto=None):
     if arguments is None:
         arguments = []
+    elif type(arguments) != list:
+        raise ArgumentParameterError("Arguments parameter must be type list")
+    elif statement.__code__.co_argcount - length(statement.__defaults__) != length(arguments):
+        raise ArgumentParameterError("Arguments amount does not fit statement function")
 
     if multi_case:
         if goto in value:

@@ -4,22 +4,42 @@
 ```python
 from sweetcase import switch, case, default
 
-num = 1
-res = switch(num, [
-    case(1,
-         lambda: "one"),
-    case(2,
-         lambda: "two"),
-    case(3,
-         lambda: "three"),
+operator = "*"
+n1 = 8
+n2 = 2
+
+res = switch(operator, [
+    case("+",
+         lambda: f"{n1} {operator} {n2} = {n1 + n2}"),
+    case("-",
+         lambda: f"{n1} {operator} {n2} = {n1 - n2}"),
+    case("*",
+         lambda: f"{n1} {operator} {n2} = {n1 * n2}"),
+    case("/",
+         lambda: f"{n1} {operator} {n2} = {n1 / n2}"),
     case(default,
-         lambda: "zero")
+         lambda: "unsupported operator"),
 ])
+
 ```
 
 equivalent JavaScript code:
 ```js
-c
+const myFunc = () => {
+    switch (operator) {
+      case '+':
+        return `${n1} ${operator} ${n2} = ${n1 + n2}`;
+      case '-':
+        return `${n1} ${operator} ${n2} = ${n1 - n2}`;
+      case '*':
+        return `${n1} ${operator} ${n2} = ${n1 * n2}`;
+      case '/':
+        return `${n1} ${operator} ${n2} = ${n1 / n2}`;
+      default:
+        return 'unsupported operator';   
+    }
+}
+const res = myFunc()
 ```
 
 Using this work-around, you can use more complex case values:

@@ -1,1 +1,3 @@
-default = "DEFAULT_VALUE_UNIQUE_PLACE_HOLDER"
+# noinspection PyPep8Naming
+class default:
+    pass

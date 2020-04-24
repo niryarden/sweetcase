@@ -1,6 +1,6 @@
 # Usage Examples
 
-## Basic use:
+## Basic use
 ```python
 from sweetcase import switch, case, default
 
@@ -39,7 +39,7 @@ res = myFunc(1)
 
 <br/><br/>
 
-## Use of multiline function with arguments:
+## Use of multiline function with arguments
 ```python
 def addition(num1, num2):
     result = num1 + num2
@@ -87,7 +87,7 @@ res = myFunc(5, 3, '+')
 
 <br/><br/>
 
-## Use of to_break=False:
+## Use of to_break=False
 the output will be both '4', '3 + 1' and '2 + 2'
 ```python
 expression = 4
@@ -120,7 +120,7 @@ The behavior of sweetcase's break is different from the classic switch-case beha
 
 <br/><br/>
 
-## Use of multi-case:
+## Use of multi-case
 
 ```python
 animal = 'Dog'
@@ -160,7 +160,7 @@ switch (Animal) {
 <br/><br/>
 
 ## goto
-output will be all 9 animals printed
+output will be all 9 animals printed:
 ```python
 def human_options():
     print("man")
@@ -219,7 +219,7 @@ switch (me)
 <br/><br/>
 
 ## Default
-Default's location won't effect the output (in that case - 0)
+Default's location won't effect the output (in that case - 0):
 ```python
 foo = 4
 switch(foo, [
@@ -260,7 +260,7 @@ switch (foo) {
 <br /><br />
 
 ## Type as Expression
-Another useful example is using the type of a variable as the expression
+Another useful example is using the type of a variable as the expression:
 ```python
 data = ["sweet", "case"]
 switch(type(data), [
@@ -277,24 +277,43 @@ switch(type(data), [
 ])
 ```
 
-equivalent JavaScript code:
-```js
-const data = ['sweet', 'case'];
-switch (data.type) {
-  case 'int':
-    console.log(data);
-    break;
-  case 'string':
-  case 'array':
-    console.log(data.length);
-    break;
-  case 'object':
-    console.log(Object.keys(data).length);
-    break;
-  case 'null':
-    console.log(null);
-    break;
-  default:
-    console.log(data)
-}
+<br /><br />
+
+## Greater than / Less than
+Using this work-around, you can use more complex case values:
+```python
+num = 105
+switch(True, [
+    case(num < 10,
+         lambda: print("one digit")),
+    case(9 < num < 100,
+         lambda: print("two digits")),
+    case(num > 99,
+         lambda: print("three digits")),
+    case(default,
+         lambda: print("off-limit")),
+])
+```
+
+## Local Variable as Case Output 
+```python
+result = None
+
+def update_result(new_result):
+    nonlocal result
+    result = new_result
+
+name = "george"
+switch(name, [
+    case("paul",
+         update_result, arguments=["yesterday"]),
+    case("john",
+         update_result, arguments=["strawberry fields forever"]),
+    case("george",
+         update_result, arguments=["while my guitar gently weeps"]),
+    case("ringo",
+         update_result, arguments=["with a little help from my friend"]),
+    case(default,
+         update_result, arguments=["unknown"])
+])
 ```

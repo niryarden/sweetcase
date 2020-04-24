@@ -24,6 +24,27 @@ class TestComplex(unittest.TestCase):
 
         self.assertEqual(result, 2)
 
+    def test_bigger_than(self):
+        result = None
+
+        def update_result(new_result):
+            nonlocal result
+            result = new_result
+
+        num = 105
+        switch(True, [
+            case(num < 10,
+                 update_result, arguments=["one digit"]),
+            case(9 < num < 100,
+                 update_result, arguments=["two digits"]),
+            case(num > 99,
+                 update_result, arguments=["three digits"]),
+            case(default,
+                 update_result, arguments=["off-limit"]),
+        ])
+
+        self.assertEqual(result, "three digits")
+
 
 if __name__ == "__main__":
     unittest.main()

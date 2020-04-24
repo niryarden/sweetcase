@@ -59,7 +59,7 @@ res = myFunc(1)
 ```
 <br/>
 
-sweetcase supports many more common uses of switch-case like **_break_**, **_arguments_** and **_multi-case_**. Please check out our [USAGE_EXAMPLES.md](https://github.com/niryarden/sweetcase/blob/master/USAGE_EXAMPLES.md) to explore these usages.
+sweetcase supports many more common uses of switch-case like **_break_**, **_multi-case_** and **_goto_**. Please check out our [USAGE_EXAMPLES.md](https://github.com/niryarden/sweetcase/blob/master/USAGE_EXAMPLES.md) to explore the different usages.
 
 <br/>
 

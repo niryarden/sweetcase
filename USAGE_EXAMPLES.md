@@ -37,18 +37,33 @@ const myFunc = num => {
 res = myFunc(1)
 ```
 
+Using this work-around, you can use more complex case values:
+```python
+num = 105
+switch(True, [
+    case(num < 10,
+         lambda: print("one digit")),
+    case(9 < num < 100,
+         lambda: print("two digits")),
+    case(num > 99,
+         lambda: print("three digits")),
+    case(default,
+         lambda: print("off-limit")),
+])
+```
+
 <br/><br/>
 
 ## Use of multiline function with arguments
 ```python
 def addition(num1, num2):
     result = num1 + num2
-    print(result)
+    print("executing addition")
     return result
 
 def subtraction(num1, num2):
     result = num1 - num2
-    print(result)
+    print("executing subtraction")
     return result
 
 numbers = [5, 3]
@@ -93,11 +108,9 @@ the output will be both '4', '3 + 1' and '2 + 2'
 expression = 4
 switch(expression, [
     case(4,
-         lambda: print("4"),
-         to_break=False),
+         lambda: print("4"), to_break=False),
     case(3 + 1,
-         lambda: print("3 + 1"),
-         to_break=False),
+         lambda: print("3 + 1"), to_break=False),
     case(2 + 2,
          lambda: print("2 + 2"))
 ])
@@ -116,7 +129,61 @@ switch(expression) {
 }
 ```
 
-The behavior of sweetcase's break is different from the classic switch-case behavior. Please see our [DOCS.md](https://github.com/niryarden/sweetcase/blob/master/DOCS.md) for further details. 
+_**The behavior of sweetcase's break is different from the classic switch-case behavior. Please see our [DOCS.md](https://github.com/niryarden/sweetcase/blob/master/DOCS.md) for further details.**_ 
+
+Another example (output will be `['August', 'September', 'October', 'November', 'December']`):
+```python
+future_months = []
+current_month = 8
+
+switch(True, [
+    case(current_month <= 1,
+         lambda: future_months.append("January"), to_break=False),
+    case(current_month <= 2,
+         lambda: future_months.append("February"), to_break=False),
+    case(current_month <= 3,
+         lambda: future_months.append("March"), to_break=False),
+    case(current_month <= 4,
+         lambda: future_months.append("April"), to_break=False),
+    case(current_month <= 5,
+         lambda: future_months.append("May"), to_break=False),
+    case(current_month <= 6,
+         lambda: future_months.append("June"), to_break=False),
+    case(current_month <= 7,
+         lambda: future_months.append("July"), to_break=False),
+    case(current_month <= 8,
+         lambda: future_months.append("August"), to_break=False),
+    case(current_month <= 9,
+         lambda: future_months.append("September"), to_break=False),
+    case(current_month <= 10,
+         lambda: future_months.append("October"), to_break=False),
+    case(current_month <= 11,
+         lambda: future_months.append("November"), to_break=False),
+    case(current_month <= 12,
+         lambda: future_months.append("December")),
+])
+```
+
+equivalent java code:
+```java
+java.util.ArrayList<String> futureMonths = new java.util.ArrayList<String>();
+int month = 8;
+
+switch (month) {
+    case 1:  futureMonths.add("January");
+    case 2:  futureMonths.add("February");
+    case 3:  futureMonths.add("March");
+    case 4:  futureMonths.add("April");
+    case 5:  futureMonths.add("May");
+    case 6:  futureMonths.add("June");
+    case 7:  futureMonths.add("July");
+    case 8:  futureMonths.add("August");
+    case 9:  futureMonths.add("September");
+    case 10: futureMonths.add("October");
+    case 11: futureMonths.add("November");
+    case 12: futureMonths.add("December");
+             break;
+```
 
 <br/><br/>
 
@@ -219,8 +286,10 @@ switch (me)
 <br/><br/>
 
 ## Default
-Default's location won't effect the output (in that case - 0):
+The default case will be executed if no other case matched the switch expression. Default's location won't effect the output (in the following example - 0). To use default, import it from sweetcase.
 ```python
+from sweetcase import switch, case, default
+
 foo = 4
 switch(foo, [
     case(2,
@@ -260,7 +329,7 @@ switch (foo) {
 <br /><br />
 
 ## Type as Expression
-Another useful example is using the type of a variable as the expression:
+Another useful example is using the type of a variable as the expression of the switch:
 ```python
 data = ["sweet", "case"]
 switch(type(data), [
@@ -279,25 +348,7 @@ switch(type(data), [
 
 <br /><br />
 
-## Greater than / Less than
-Using this work-around, you can use more complex case values:
-```python
-num = 105
-switch(True, [
-    case(num < 10,
-         lambda: print("one digit")),
-    case(9 < num < 100,
-         lambda: print("two digits")),
-    case(num > 99,
-         lambda: print("three digits")),
-    case(default,
-         lambda: print("off-limit")),
-])
-```
-
-<br /><br />
-
-## Local Variable as Case Output 
+## Local Variable as Output 
 ```python
 result = None
 

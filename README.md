@@ -6,7 +6,6 @@ sweetcase allows Python programmers using a very similar syntax and get the same
 <br/><br/><br/>
 
 ## Install and Import
-(currently unavailable)
 ```bash
 pip install sweetcase
 ```

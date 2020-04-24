@@ -25,37 +25,30 @@ Basic Use:
 ```python
 from sweetcase import switch, case, default
 
-num = 1
-res = switch(num, [
-    case(1,
-         lambda: 'one'),
-    case(2,
-         lambda: 'two'),
-    case(3,
-         lambda: 'three'),
-    case(default,
-         lambda: 'zero')
-])
+c
 ```
 
 equivalent JavaScript code:
 ```js
-const myFunc = num => {
-    switch(num) {
-        case 1:
-          return 'one';
-          break;
-        case 2:
-          return 'two';
-          break;
-        case 3:
-          return 'three';
-          break;
-        default:
-          return 'zero';
-    };
+const operator = "*"
+const n1 = 8
+const n2 = 2
+
+const myFunc = () => {
+    switch (operator) {
+      case '+':
+        return n1 + n2;
+      case '-':
+        return n1 + n2;
+      case '*':
+        return n1 + n2;
+      case '/':
+        return n1 + n2;
+      default:
+        return 'unsupported operator';   
+    }
 }
-res = myFunc(1)
+const res = myFunc()
 ```
 <br/>
 

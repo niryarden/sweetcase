@@ -10,31 +10,34 @@ n2 = 2
 
 res = switch(operator, [
     case("+",
-         lambda: f"{n1} {operator} {n2} = {n1 + n2}"),
+         lambda: n1 + n2),
     case("-",
-         lambda: f"{n1} {operator} {n2} = {n1 - n2}"),
+         lambda: n1 - n2),
     case("*",
-         lambda: f"{n1} {operator} {n2} = {n1 * n2}"),
+         lambda: n1 * n2),
     case("/",
-         lambda: f"{n1} {operator} {n2} = {n1 / n2}"),
+         lambda: n1 / n2),
     case(default,
          lambda: "unsupported operator"),
 ])
-
 ```
 
 equivalent JavaScript code:
 ```js
+const operator = "*"
+const n1 = 8
+const n2 = 2
+
 const myFunc = () => {
     switch (operator) {
       case '+':
-        return `${n1} ${operator} ${n2} = ${n1 + n2}`;
+        return n1 + n2;
       case '-':
-        return `${n1} ${operator} ${n2} = ${n1 - n2}`;
+        return n1 + n2;
       case '*':
-        return `${n1} ${operator} ${n2} = ${n1 * n2}`;
+        return n1 + n2;
       case '/':
-        return `${n1} ${operator} ${n2} = ${n1 / n2}`;
+        return n1 + n2;
       default:
         return 'unsupported operator';   
     }

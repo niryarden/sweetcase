@@ -42,17 +42,17 @@ equivalent JavaScript code:
 ```js
 const myFunc = num => {
     switch(num) {
-    case 1:
-        return "one";
-        break;
-    case 2:
-        return "two";
-        break;
-    case 3:
-        return "three";
-        break;
-    default:
-        return "zero";
+        case 1:
+          return 'one';
+          break;
+        case 2:
+          return 'two';
+          break;
+        case 3:
+          return 'three';
+          break;
+        default:
+          return 'zero';
     };
 }
 res = myFunc(1)

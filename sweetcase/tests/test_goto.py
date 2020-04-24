@@ -1,6 +1,6 @@
 import unittest
 from sweetcase import switch, case, default
-from ..exceptions import EternalLoopError
+from sweetcase.exceptions import EternalLoopError
 
 
 class TestGoto(unittest.TestCase):

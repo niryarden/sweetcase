@@ -1,7 +1,21 @@
-from .default import default
+import inspect
+from sweetcase.default import default
 
 
 def switch(expression, cases):
+    check_supplied_parameters_to_switch(expression, cases)
+    return run_switch(expression, cases)
+
+
+def check_supplied_parameters_to_switch(expression, cases):
+    if type(cases) != list:
+        raise TypeError("cases parameter must be type list")
+
+    if callable(expression) and not inspect.isclass(expression):
+        raise TypeError("expression must not be function or lambda, as they are not comparable")
+
+
+def run_switch(expression, cases):
     default_value = False
     should_execute_default = True
 

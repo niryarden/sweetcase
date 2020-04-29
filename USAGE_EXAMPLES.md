@@ -234,6 +234,23 @@ switch (Animal) {
 
 <br/><br/>
 
+## Regular Expressions 
+```python
+last_name = "Hernandez"
+switch(last_name, [
+    case("(?i)sson",
+         lambda: print("Swedish"), regex=True),
+    case("(?i)ez",
+         lambda: print("Spanish"), regex=True),
+    case("(?i)ang",
+         lambda: print("Chinese"), regex=True),
+    case(["nev", "nov"],
+         lambda: print("Russian"), regex=True, multi_case=True),  
+])
+```
+
+<br/><br/>
+
 ## goto
 output will be all 9 animals printed:
 ```python

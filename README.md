@@ -66,7 +66,7 @@ const res = myFunc()
 ```
 <br/>
 
-sweetcase supports many more common uses of switch-case like **_break_**, **_multi-case_** and **_goto_**. Please check out our [USAGE_EXAMPLES.md](https://github.com/niryarden/sweetcase/blob/master/USAGE_EXAMPLES.md) to explore the different usages.
+sweetcase supports many more common uses of switch-case like **_break_**, **_multi-case_** and **_regex_**. It's highly recommended to check out our [USAGE_EXAMPLES.md](https://github.com/niryarden/sweetcase/blob/master/USAGE_EXAMPLES.md) and explore the different usages.
 
 <br/>
 

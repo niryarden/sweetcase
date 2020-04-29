@@ -1,4 +1,5 @@
 import inspect
+import re
 from sweetcase.default import default
 
 
@@ -41,9 +42,17 @@ def run_switch(expression, cases):
 
 def get_comparison_condition(expression, case):
     if case.multi_case and type(case.value) == list:
-        return expression in case.value
+        if case.regex:
+            # create a regex which is a combination of all regex cases
+            combined_regex = "(" + ")|(".join(case.value) + ")"
+            return bool(re.search(combined_regex, expression))
+        else:
+            return expression in case.value
     if not case.multi_case:
-        return expression == case.value
+        if case.regex:
+            return bool(re.search(case.value, expression))
+        else:
+            return expression == case.value
     return False
 
 

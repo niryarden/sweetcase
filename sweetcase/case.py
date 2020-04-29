@@ -4,26 +4,27 @@ from sweetcase.utils import length
 
 
 class Case:
-    def __init__(self, value, statement, arguments, to_break, multi_case, goto):
+    def __init__(self, value, statement, arguments, to_break, multi_case, goto, regex):
         self.value = value
         self.statement = statement
         self.arguments = arguments
         self.to_break = to_break
         self.multi_case = multi_case
         self.goto = goto
+        self.regex = regex
 
     def exec(self):
         return self.statement(*self.arguments)
 
 
-def case(value, statement, arguments=None, to_break=True, multi_case=False, goto=None):
+def case(value, statement, arguments=None, to_break=True, multi_case=False, goto=None, regex=False):
     if arguments is None:
         arguments = []
-    check_supplied_parameters_to_case(value, statement, arguments, to_break, multi_case, goto)
-    return Case(value, statement, arguments, to_break, multi_case, goto)
+    check_supplied_parameters_to_case(value, statement, arguments, to_break, multi_case, goto, regex)
+    return Case(value, statement, arguments, to_break, multi_case, goto, regex)
 
 
-def check_supplied_parameters_to_case(value, statement, arguments, to_break, multi_case, goto):
+def check_supplied_parameters_to_case(value, statement, arguments, to_break, multi_case, goto, regex):
     # check supplied value
     if callable(value) and not inspect.isclass(value):
         raise TypeError("value must not be function or lambda, as they are not comparable")
@@ -44,6 +45,12 @@ def check_supplied_parameters_to_case(value, statement, arguments, to_break, mul
 
     if type(multi_case) != bool:
         raise TypeError("multi_case parameter must be boolean")
+
+    # check regex
+    if type(regex) != bool:
+        raise TypeError("regex parameter must be boolean")
+    if regex and not multi_case and type(value) != str:
+        raise TypeError("when regex parameter set to True, value must be a string")
 
     # check supplied goto
     if multi_case:

@@ -234,6 +234,26 @@ switch (Animal) {
 
 <br/><br/>
 
+## Regular Expressions 
+comparing with `re.search` (output would be "Spanish"):
+```python
+last_name = "Hernandez"
+switch(last_name, [
+    case("(?i)ang",
+         lambda: print("Chinese"), regex=True),
+    case("sson",
+         lambda: print("Swedish"), regex=True),
+    case("ez",
+         lambda: print("Spanish"), regex=True),
+    case(["nev", "nov"],
+         lambda: print("Russian"), regex=True, multi_case=True),
+    case(default,
+         lambda: print("no match")),
+])
+```
+
+<br/><br/>
+
 ## goto
 output will be all 9 animals printed:
 ```python

@@ -53,11 +53,11 @@ const myFunc = () => {
       case '+':
         return n1 + n2;
       case '-':
-        return n1 + n2;
+        return n1 - n2;
       case '*':
-        return n1 + n2;
+        return n1 * n2;
       case '/':
-        return n1 + n2;
+        return n1 / n2;
       default:
         return 'unsupported operator';   
     }

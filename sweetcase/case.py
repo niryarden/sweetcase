@@ -1,4 +1,5 @@
 import inspect
+import types
 from sweetcase.exceptions import EternalLoopError, ArgumentParameterError
 from sweetcase.utils import length
 
@@ -36,8 +37,9 @@ def check_supplied_parameters_to_case(value, statement, arguments, to_break, mul
     # check supplied arguments
     if type(arguments) != list:
         raise ArgumentParameterError("Arguments parameter must be type list")
-    elif statement.__code__.co_argcount - length(statement.__defaults__) != length(arguments):
-        raise ArgumentParameterError("Arguments amount does not fit statement function")
+    elif not isinstance(statement, types.BuiltinFunctionType):
+        if statement.__code__.co_argcount - length(statement.__defaults__) != length(arguments):
+            raise ArgumentParameterError("Arguments amount does not fit statement function")
 
     # check supplied to_break and multi-case
     if type(to_break) != bool:

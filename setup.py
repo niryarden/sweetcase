@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sweetcase",
-    version="0.0.4",
+    version="0.0.5",
     author="Nir Yarden",
     author_email="niryar@gmail.com",
     description="Simple and light-weight module allowing the use of a switch-case alike syntax in python",

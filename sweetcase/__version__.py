@@ -1,0 +1,7 @@
+__title__ = 'sweetcase'
+__description__ = 'Simple and light-weight module allowing the use of a switch-case alike syntax in python.'
+__url__ = 'https://github.com/niryarden/sweetcase'
+__version__ = '0.0.4'
+__author__ = 'Nir Yarden'
+__author_email__ = 'niryar@gmail.com'
+__license__ = 'MIT'
